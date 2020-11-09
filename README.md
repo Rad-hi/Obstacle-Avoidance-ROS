@@ -90,6 +90,4 @@ As with all ROS nodes, you'll need the node to be placed inside a package before
 
 [Linkedin](https://www.linkedin.com/in/radhi-sghaier/)
 
----
-
-[Back to top](#code-a-"naive"-obstacle-avoiding-robot-in-ros)
+####Thank you for reading.
