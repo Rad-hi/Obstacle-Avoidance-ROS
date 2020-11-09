@@ -1,6 +1,6 @@
 # Code a "naive" obstacle avoiding robot in ROS
 
-<img src="images/thingy-01.jpg" width="720">
+<img src="images/thingy-01.jpg" width="960">
 
 >YOUTUBE VIDEO: ()
 
@@ -49,7 +49,7 @@ The clearest path is the direction in which the distance to the nearest object i
 
 In this approach, I decided that if mutiple paths are equally clear, the robot shall face the path that'll be reached with minimal movement, this approach is illustrated in the picture down below.
 
-<img src="images/thingy-02.jpg" width="720">
+<img src="images/thingy-02.jpg" width="960">
 
 ### Reading the data from the sensor and acting upon it
 
@@ -66,7 +66,7 @@ Once we get the sign of the angular velocity (aka its sign), and for how long we
 
 The data processing approach is illustrated in the picture down below.
 
-<img src="images/thingy-03.jpg" width="720">
+<img src="images/thingy-03.jpg" width="960">
 
 ---
 
