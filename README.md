@@ -1,4 +1,4 @@
-# A "naive" obstacle avoiding robot in ROS
+# Code a "naive" obstacle avoiding robot in ROS
 
 <img src="images/thingy-01.jpg" width="300">
 
@@ -92,4 +92,4 @@ As with all ROS nodes, you'll need the node to be placed inside a package before
 
 [Linkedin](https://www.linkedin.com/in/radhi-sghaier/)
 
-[Back to top](#A "naive" obstacle avoiding robot in ROS)
+[Back to top](#Code-a-"naive"-obstacle-avoiding-robot-in-ROS)
