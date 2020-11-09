@@ -2,7 +2,7 @@
 
 <img src="images/thingy-01.jpg" width="960">
 
->YOUTUBE VIDEO: ()
+>[YOUTUBE VIDEO](https://youtu.be/5L95R6ePKqo)
 
 ---
 
