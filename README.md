@@ -11,21 +11,21 @@
 This project was made as a practice for basic ROS concepts such as ros-topics, subscribing, publishing, and simulating robots in Gazebo.
 The goal was to make a robot:
 
--Read data from the 360° LiDAR scanner.
+- Read data from the 360° LiDAR scanner.
 
--Process the data in order to find the clearest path (will talk about this in more details down below).
+- Process the data in order to find the clearest path (will talk about this in more details down below).
 
--Steer the robot into the right direction.
+- Steer the robot into the right direction.
 
 ### Technologies used
 
--Ubuntu distro : 18.04 LTS
+- Ubuntu distro : 18.04 LTS
 
--ROS distro: Melodic
+- ROS distro: Melodic
 
--Gazebo version : 9
+- Gazebo version : 9
 
--Python: rospy
+- Python: rospy
 
 ---
 
@@ -33,9 +33,9 @@ The goal was to make a robot:
 
 This article assumes having basic knowledge of ROS, Python, Gazebo, LiDARs, and Linux, since these will not be covered here.
 
-### Get started with ROS
+#### Get started with ROS
 
-If you want to get started with ROS, read this [doc](https://docs.google.com/document/d/1VXA88LlZBkRv_2Z2--jHAbQZDKCOZ0l3LTyKR5cDM5o/edit?usp=sharing)
+If you want to get started with ROS, read this [doc](https://docs.google.com/document/d/1VXA88LlZBkRv_2Z2--jHAbQZDKCOZ0l3LTyKR5cDM5o/edit?usp=sharing).
 
 ---
 
@@ -82,9 +82,9 @@ As with all ROS nodes, you'll need the node to be placed inside a package before
 
 ---
 
-If you want to get started with ROS, you can check [this doc](https://docs.google.com/document/d/1VXA88LlZBkRv_2Z2--jHAbQZDKCOZ0l3LTyKR5cDM5o/edit?usp=sharing) I created as a documentation to my journey of learning ROS.
+- If you want to get started with ROS, you can check [this doc](https://docs.google.com/document/d/1VXA88LlZBkRv_2Z2--jHAbQZDKCOZ0l3LTyKR5cDM5o/edit?usp=sharing) I created as a documentation to my journey of learning ROS.
 
-This YouTube [playlist](https://www.youtube.com/playlist?list=PLn8PRpmsu08rLRGrnF-S6TyGrmcA2X7kg) explains beautifully autonomous navigation if you want to explore more further this field.
+- This YouTube [playlist](https://www.youtube.com/playlist?list=PLn8PRpmsu08rLRGrnF-S6TyGrmcA2X7kg) explains beautifully autonomous navigation if you want to explore more further this field.
 
 ---
 
