@@ -1,0 +1,5 @@
+*This code is intended to work in a ROS package
+
+*This code can't run on itself, it has to be put in an existing package, or a tailor made one.
+
+*This code was written in Python, following the PEP8 regulations.
