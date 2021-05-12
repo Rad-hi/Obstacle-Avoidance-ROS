@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import rospy
 from geometry_msgs.msg import Twist #ros msg that deals with moving the robot
 from sensor_msgs.msg import LaserScan #ros msg that gets the laser scans
-import time
+# import time
 
 # obstacle threshhold, objects a this distance or below it
 #are considered obstacles
@@ -16,7 +16,7 @@ PI = 3.141592653
 NORMAL_LIN_VEL = 0.50 #meters/second
 #after detecting an obstacle, the robot shall back up a bit (negative) while
 # rotating to help in case it can't perform a stationary rotation
-TRANS_LIN_VEL = -0.05
+TRANS_LIN_VEL = -0.08
 #the robot always rotates with the same value of angular velocity
 TRANS_ANG_VEL = 1.75
 
@@ -114,20 +114,32 @@ def main():
     rate = rospy.Rate(10) #10Hz
     #keep running while the ros-master isn't isn't shutdown
     while not rospy.is_shutdown():
-        ClearanceTest()
-        if(Urgency_Report["act"]):
-            vel = Steer(vel)
-        else:
+
+        # Need a do{ ... }while(); here (C is awesome)
+        # Since I need to check at least once the clearance 
+        done = False
+        while not done:
+            ClearanceTest()
+            if(Urgency_Report["act"]):
+                vel = Steer(vel)
+                pub.publish(vel)
+            else:
+                done = True
+        # This else belongs to the while(), and the code below it could be cleaned furthermore
+        else: 
             vel.linear.x = NORMAL_LIN_VEL
             vel.linear.y = 0
             vel.linear.z = 0
             vel.angular.x = 0
             vel.angular.y = 0
             vel.angular.z = 0
-        pub.publish(vel)
-        #after publishing our action, we give it some time to execute the
-        #needed actions before reading the data again.
-        time.sleep(Urgency_Report["sleep"])
+            pub.publish(vel)
+
+        ### This is stupid and shouldn't be done (sleep()) !
+        # After publishing our action, we give it some time to execute the
+        # needed actions before reading the data again.
+        # time.sleep(Urgency_Report["sleep"])
+        
         rate.sleep()
 
 if __name__ == "__main__":
