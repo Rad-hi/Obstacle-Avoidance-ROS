@@ -2,7 +2,7 @@
 
 <img src="images/thingy-01.jpg" width="960">
 
->[YOUTUBE VIDEO](https://youtu.be/5L95R6ePKqo)
+> [YOUTUBE VIDEO](https://youtu.be/5L95R6ePKqo)
 
 ---
 
@@ -16,6 +16,10 @@ The goal was to make a robot:
 - Process the data in order to find the clearest path (will talk about this in more details down below).
 
 - Steer the robot into the right direction.
+
+<img src="images/demo.gif">
+
+> Quick running demo
 
 ### Technologies used
 
