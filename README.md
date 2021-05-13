@@ -19,11 +19,11 @@ The goal was to make a robot:
 
 ### Technologies used
 
-- Ubuntu distro : 18.04 LTS
+- Ubuntu distro : 18.04 LTS (tested on Pop!OS too)
 
-- ROS distro: Melodic
+- ROS distro: Melodic (tested on Noetic too)
 
-- Gazebo version : 9
+- Gazebo version : 9+
 
 - Python: rospy
 
@@ -58,9 +58,11 @@ After getting the minimum of each section, we calculate the costs of deviating f
 
 ##### (cost/|cost|) * ANGULAR_VELOCITY (returns positive angular_velocity if orientation is at left, negative otherwise).
 
-Then we need to specify the time needed to execute this rotation before getting back to walking in a straight line, for that we use this formula:
+~Then we need to specify the time needed to execute this rotation before getting back to walking in a straight line, for that we use this formula:~
 
-##### (|cost| * 30 * PI) / (180 * ANGULAR_VELOCITY) (the ANGULAR_VELOCITY is in *radians/second*, and 3.14\[radian] = PI\[radian] = 180\[degree]).
+~(|cost| * 30 * PI) / (180 * ANGULAR_VELOCITY) (the ANGULAR_VELOCITY is in *radians/second*, and 3.14\[radian] = PI\[radian] = 180\[degree]).~
+
+#### The sleep approach was blocking the code in many cases and resulted in the robot being stuck in between obstacles, I updated it with a non blocking `do{ .. }while()` approach (there's no do{ .. }while() in python, just adopted the principle from the beloved **C**).
 
 Once we get the sign of the angular velocity (aka its sign), and for how long we'll need to execute it, we send this data to the robot and *voila*, obstacle avoided. 
 
