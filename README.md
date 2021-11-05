@@ -66,9 +66,11 @@ After getting the minimum of each section, we calculate the costs of deviating f
 
 ~(|cost| * 30 * PI) / (180 * ANGULAR_VELOCITY) (the ANGULAR_VELOCITY is in *radians/second*, and 3.14\[radian] = PI\[radian] = 180\[degree]).~
 
-#### The sleep approach was blocking the code in many cases and resulted in the robot being stuck in between obstacles, I updated it with a non blocking `do{ .. }while()` approach (there's no do{ .. }while() in python, just adopted the principle from the beloved **C**).
+**The sleep approach was blocking the code in many cases and resulted in the robot being stuck in between obstacles, I updated it with a non blocking `do{ .. }while()` approach (there's no do{ .. }while() in python, just adopted the principle from the beloved C).**
 
-Once we get the sign of the angular velocity (aka its sign), and for how long we'll need to execute it, we send this data to the robot and *voila*, obstacle avoided. 
+**EDIT: I rewrote the code in an OOP approach for better portability, hence now no sleep/do-while approach is needed.**
+
+Once we get the sign of the angular velocity~, and for how long we'll need to execute it~, we send this data to the robot and *voila*, obstacle avoided. 
 
 The data processing approach is illustrated in the picture down below.
 
