@@ -49,7 +49,14 @@ class Avoider():
 		             "back_C" , "back_L" , "right_R",
 		             "right_C", "right_L", "front_R",
 				  ]
-		for i, region in enumerate(REGIONS):
+
+		# The front central region necessitate getting the last and first 15 points of the ranges
+		intermediary = scan.ranges[:int(self.REGIONAL_ANGLE/2)]\
+					 + scan.ranges[(len(scan.ranges)-1)*int(self.REGIONAL_ANGLE/2):]
+		self.Regions_Report["front_C"] = [x for x in intermediary if x <= self.OBSTACLE_DIST and x != 'inf']
+		
+		# Enumerate all regions but the first
+		for i, region in enumerate(REGIONS[1:]):
 			# Only objects at a distance less than or equal to the threshold are considered obstacles
 			self.Regions_Report[region] = [x for x in scan.ranges[self.REGIONAL_ANGLE*i:self.REGIONAL_ANGLE*(i+1)]\
 												   if x <= self.OBSTACLE_DIST and x != 'inf']
@@ -81,8 +88,9 @@ class Avoider():
 				maxima["destination"] = region[0]
 		#calculate the cost to the chosen orientation
 		regional_dist = self.Regions_Distances[maxima["destination"]]-self.Regions_Distances[goal]
+		
 		# Return whether to act or not, and the angular velocity with the appropriate sign
-		return (closest != 0), (regional_dist/max(1, abs(regional_dist)))*self.TRANS_ANG_VEL
+		return (closest != 0), (regional_dist/[abs(regional_dist) if regional_dist != 0 else 1][0])*self.TRANS_ANG_VEL
 
 	def _steer(self, steer=False, ang_vel=0):
 		'''
