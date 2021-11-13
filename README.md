@@ -83,6 +83,16 @@ The data processing approach is illustrated in the picture down below.
 
 As with all ROS nodes, you'll need the node to be placed inside a package before running it, so copy the node file into any existing package you have, or create its own package for it. Once you have the file in your machine, you'll need to run the TurtleBot sumulation (you can run this code with any robot that's using the *Twist* message under the */cmd_vel* topic, just make sure you adjust the obstacle threshhold along with the other key parameters), then you can launch the code and watch your robot dodge all obstacles around it.
 
+### My approach
+
+1- Place the project inside: **catkin_ws/src/turtlebot3/turtlebot3_example/PLACE_SCRIPTS_FOLDER_HERE**
+
+2- **Run** ```$ roscore```
+
+3- (On a seperate terminal) **Run** ```$ roslaunch turtlebot3_gazebo turtlebot3_world.launch``` *Assuming you have turtlebot3 already setup on your pc\**
+
+4- (On a seperate terminal) **Run** ```$ rosrun turtlebot3_example scripts/laser_obstacle_avoid_360_node_class.py```
+
 ---
 
 ## References
